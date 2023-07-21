@@ -9,7 +9,6 @@ dotenv.config()
 const saltNumber = process.env.salt_round 
 const secretKey = process.env.secret_key  
 const saltRound = parseFloat(saltNumber)
-
 const register=(req,res)=>{
     // res.send({msg:"register"})
     const data = req.body;
@@ -18,9 +17,9 @@ const register=(req,res)=>{
         res.send({msg:"user already exist"})
     }else{
         const salt = bcrypt.genSaltSync(saltRound)
-
+console.log(salt);
         const hashedPassword = bcrypt.hashSync(data.password,salt)
-
+console.log(hashedPassword);
         const tempObj = {
             name:data.name,
             phone:data.phone,
@@ -40,13 +39,14 @@ const login=(req,res)=>{
     if(user.email ===data.email){
         // res.send("user has logged in succesfully")
         const validate = bcrypt.compareSync(data.password,user.password)
-        const token = jwt.sign({user:user.email},secretKey,{expiresIn:3600})
+        const token = jwt.sign({user:user.email},secretKey,{expiresIn:4500})
         if(validate){
             res.send({
                 email:user.email,
                password:user.password,
                token:token
             })
+            console.log(token);
         }    }
     else{
         res.send("User has not registered, please try again")

@@ -48,7 +48,7 @@ function Login() {
   return (
     <div>
       <button onClick={handleBackBtn} className="backButtn">Back</button>
-      <div className="loginText">Login here</div>
+      <div className="loginText" style={{color:"red"}}>Login here</div>
       <div className="loginForm">
         <div className="logComCon">
           {/* <div>Login entering your Correct credentials</div> */}
@@ -57,10 +57,10 @@ function Login() {
             className="lockImg"
             src="https://www.freeiconspng.com/thumbs/secure-icon-png/lock-icon-17.png"
             alt="Locked"
-          />
+          /><form>
           <div className="Logcont1">
             {/* <label htmlFor="email">Email:</label> */}
-            <input
+            <label>Username:<input
               className="lLoginInp"
               type="email"
               name="email"
@@ -68,12 +68,12 @@ function Login() {
               onChange={handleChange}
               placeholder="Enter your email"
               required
-            />
+            /></label>
           </div>
-
+<br />
           <div className="Logcont2">
             {/* <label htmlFor="password">Password:</label> */}
-            <input
+            <label>Password:<input
               className="lLoginInp"
               type="password"
               name="password"
@@ -81,22 +81,16 @@ function Login() {
               onChange={handleChange}
               placeholder="Enter your password"
               required
-            />
+            /></label>  
           </div>
+          </form>
           {error && <span style={{ color: "red" }}>{error}</span>}
           <button className="Sbutn" onClick={handleButton}>
             Login
           </button>
         </div>
       </div>
-      <div className="homeBody">
-        <img
-          className="homeImg"
-          src="https://images.ctfassets.net/vfkpgemp7ek3/2WO42hC1SEUS5xBXdEU4bL/0cfa8dab67a29526b62a0317ec263c95/banner.jpg"
-          alt="no img"
-        />
-      </div>
-    </div>
+         </div>
   );
 }
 

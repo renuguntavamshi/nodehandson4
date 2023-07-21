@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+body{
+  background-color: #d3f2e5;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,7 +16,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #244485;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -55,7 +57,7 @@ body{
 .firstContHome {
   /* background-color: aliceblue; */
   /* background-color: #0093E9; */
-background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+background-image: linear-gradient(160deg, #562e9b 0%, #8b2692 100%);
 
   /* position: relative; */
   height: 4.5rem;
@@ -98,11 +100,11 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
   display: flex;
   flex-direction: column;
   gap: 25px;
-  background-color: green;
+  background-color: rgb(230, 251, 136);
   width: 25%;
   min-width: 25rem;
   /* height: 50%; */
-  height: 55%;
+  height: 50%;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
@@ -114,7 +116,7 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
   /* border: 2px solid lawngreen; */
 }
 .sInp {
-  width: 80%;
+  width: 50%;
     height: 1.7rem;
     border-radius: 7px;
     text-align: center;
@@ -135,7 +137,8 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
   position: absolute;
   bottom: 10px;
   width: 100%;
-  background-color: cornflowerblue;
+  background-image: linear-gradient(90deg, #0f2bca 0%, #aa49b0 100%);
+
   height: 3rem;
   display: flex;
   justify-content: center;

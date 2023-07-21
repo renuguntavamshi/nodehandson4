@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from 'axios'
@@ -14,7 +13,6 @@ function NewRegister() {
   });
   const [store, setStore] = useState(null);
   const [error, setError] = useState(null);
-
   const handleButton = (e) => {
     e.preventDefault();
     setStore({ ...data });
@@ -23,12 +21,6 @@ function NewRegister() {
     const { email, password } = data;
     const API = "http://localhost:7070/user/register"
     
-    setData({
-      name: "",
-      phonenumber: "",
-      email: "",
-      password: ""
-    });
     if (email && password) {
       axios.post(API,data)
         .then(res => {
@@ -49,7 +41,7 @@ function NewRegister() {
 
   return (
     <div className="SignupCon">
-      <div className="SignText">Sign up here</div>
+      <div className="SignText" style={{color:"black"}}>Sign up here</div>
       <div className="cardForm">
         <form className="SignupForm">
           <img
@@ -57,16 +49,16 @@ function NewRegister() {
             src="https://www.freeiconspng.com/thumbs/secure-icon-png/lock-icon-17.png"
             alt="Locked"
           />
-          <input
-            className="sInp"
+          <label>Name:<input
+            className="signup"
             type="text"
             name="name"
             value={data.name}
             placeholder="Enter Your Name"
             onChange={handleChange}
             required
-          />
-          <input
+          /></label>
+                   <label>PhoneNumber: <input
             className="sInp"
             type="number"
             name="phonenumber"
@@ -74,42 +66,35 @@ function NewRegister() {
             placeholder="Enter Your Phone Number"
             onChange={handleChange}
             required
-          />
-          <input
-            className="sInp"
+          /></label>
+                   <label>Username: <input
+            className="signup"
             type="email"
             name="email"
             value={data.email}
             placeholder="Enter Your Email"
             onChange={handleChange}
             required
-          />
-          <input
-            className="sInp"
+          /></label>
+                    <label>Password:<input
+            className="signp"
             type="password"
             name="password"
             value={data.password}
             placeholder="Enter Your Password"
             onChange={handleChange}
             required
-          />
+          /></label>
           {error && <span style={{ color: "red" }}>{error}</span>}
           <button className="Sbutn" onClick={handleButton}>
             Signup
           </button>
           <div>
-            <NavLink to="/user/login"> Already have an account? Sign in</NavLink>
+            <NavLink to="/user/login" style={{color:"black"}}> Already have an account? Sign in</NavLink>
           </div>
         </form>
       </div>
 
-      <div className="homeBody">
-        <img
-          className="homeImg"
-          src="https://images.ctfassets.net/vfkpgemp7ek3/2WO42hC1SEUS5xBXdEU4bL/0cfa8dab67a29526b62a0317ec263c95/banner.jpg"
-          alt="no img"
-        />
-      </div>
     </div>
   );
 }
